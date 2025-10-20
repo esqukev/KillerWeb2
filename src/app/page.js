@@ -158,7 +158,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           style={{
             backgroundImage: 'url(/Fondo.jpg)',
             backgroundSize: 'contain',
-            backgroundPosition: 'center center',
+            backgroundPosition: 'center bottom',
             zIndex: 0
           }}
         ></div>
