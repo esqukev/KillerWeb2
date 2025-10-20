@@ -157,7 +157,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           className="absolute inset-0 bg-center bg-no-repeat" 
           style={{
             backgroundImage: 'url(/Fondo.jpg)',
-            backgroundSize: 'cover',
+            backgroundSize: 'contain',
             backgroundAttachment: 'fixed',
             backgroundPosition: 'center center'
           }}
