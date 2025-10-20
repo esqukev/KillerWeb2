@@ -144,12 +144,13 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       {/* Carlita-Style Background */}
       <div className="fixed inset-0 z-0 bg-black" style={{top: '-100vh', bottom: '-100vh', height: '300vh'}}>
         {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
-        <div className="absolute inset-0" style={{
+        <div className="fixed inset-0" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
           opacity: 0.3,
           maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)'
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
+          zIndex: 1
         }}></div>
         
         {/* FONDO FOTO - Background Image */}
@@ -159,12 +160,12 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
             backgroundImage: 'url(/Fondo.jpg)',
             backgroundSize: 'contain',
             backgroundPosition: 'center bottom',
-            zIndex: 0
+            zIndex: 2
           }}
         ></div>
         
         {/* FONDO FOTO - Gradient Overlay (Darker) */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="fixed inset-0 bg-black/70" style={{zIndex: 3}}></div>
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
