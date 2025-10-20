@@ -148,8 +148,8 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
           opacity: 0.3,
-          maskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)'
+          maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)'
         }}></div>
         
         {/* FONDO FOTO - Background Image */}
