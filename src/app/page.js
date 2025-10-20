@@ -162,7 +162,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         ></div>
         
         {/* FONDO FOTO - Gradient Overlay (Darker) */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="fixed inset-0 bg-black/70 pointer-events-none"></div>
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
@@ -216,7 +216,16 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         <div className="absolute top-1/5 left-3/4 w-1 h-1 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '7s'}}></div>
         <div className="absolute bottom-1/5 right-3/4 w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '7.5s'}}></div>
         
-        <style jsx>{`
+        <style jsx global>{`
+          body {
+            overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+          }
+          
+          html {
+            overscroll-behavior: none;
+          }
+          
           @keyframes moveLight {
             0% { --x: 0%; --y: 0%; }
             25% { --x: 100%; --y: 0%; }
