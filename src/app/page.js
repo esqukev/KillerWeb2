@@ -8,6 +8,8 @@ export default function Home() {
   const [aboutLanguage, setAboutLanguage] = useState('english');
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [mediaType, setMediaType] = useState(null);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleSection = (section) => {
     console.log('Button clicked - v2:', section);
@@ -138,6 +140,25 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [selectedMedia, navigateMedia]);
   
+  // Hide/Show nav on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down
+        setShowNav(false);
+      } else {
+        // Scrolling up
+        setShowNav(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
     <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden">
@@ -246,7 +267,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </div>
 
             {/* Header Menu */}
-      <header className="fixed top-[27px] left-0 right-0 z-30">
+      <header className={`fixed left-0 right-0 z-30 transition-transform duration-300 ${showNav ? 'translate-y-[27px]' : '-translate-y-full'}`}>
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
