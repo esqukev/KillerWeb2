@@ -140,33 +140,28 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
   
 
   return (
-    <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden" style={{position: 'relative', overflow: 'hidden'}}>
+    <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden">
       {/* Carlita-Style Background */}
-      <div className="fixed inset-0 z-0 bg-black" style={{top: '-100vh', bottom: '-100vh', height: '300vh'}}>
+      <div className="absolute inset-0 z-0 bg-black">
+        {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          opacity: 0.3,
+          maskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)'
+        }}></div>
         
         {/* FONDO FOTO - Background Image */}
         <div 
-          className="fixed inset-0 bg-center bg-no-repeat pointer-events-none" 
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
           style={{
-            backgroundImage: 'url(/Fondo.jpg)',
-            backgroundSize: 'contain',
-            backgroundPosition: 'center bottom',
-            zIndex: 1
+            backgroundImage: 'url(/Fondo.jpg)'
           }}
         ></div>
         
         {/* FONDO FOTO - Gradient Overlay (Darker) */}
-        <div className="fixed inset-0 bg-black/70 pointer-events-none" style={{zIndex: 2}}></div>
-        
-        {/* Subtle Grid Pattern - ON TOP - Oval Shape Visible */}
-        <div className="fixed inset-0 pointer-events-none" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-          opacity: 1,
-          maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
-          zIndex: 10
-        }}></div>
+        <div className="absolute inset-0 bg-black/70"></div>
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
@@ -220,28 +215,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         <div className="absolute top-1/5 left-3/4 w-1 h-1 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '7s'}}></div>
         <div className="absolute bottom-1/5 right-3/4 w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '7.5s'}}></div>
         
-        <style jsx global>{`
-          body {
-            overflow-x: hidden;
-            overscroll-behavior: none;
-            -webkit-overflow-scrolling: touch;
-          }
-          
-          html {
-            overscroll-behavior: none;
-          }
-          
-          a, button {
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
-          }
-          
-          a:focus, button:focus {
-            outline: none;
-          }
-          
+        <style jsx>{`
           @keyframes moveLight {
             0% { --x: 0%; --y: 0%; }
             25% { --x: 100%; --y: 0%; }
@@ -262,7 +236,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </div>
 
             {/* Header Menu */}
-      <header className="fixed top-[25px] left-0 right-0 z-30">
+      <header className="fixed top-0 left-0 right-0 z-30">
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
@@ -747,7 +721,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       )}
 
       {/* Footer */}
-      <footer className="fixed bottom-[9px] left-4 md:left-8 right-4 md:right-8 z-20">
+      <footer className="fixed bottom-0 left-4 md:left-8 right-4 md:right-8 z-20">
         <div className="text-center" style={{paddingBottom: '8px'}}>
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-4 md:space-x-6 mb-4 md:mb-6">
