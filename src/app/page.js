@@ -10,7 +10,7 @@ export default function Home() {
   const [mediaType, setMediaType] = useState(null);
 
   const toggleSection = (section) => {
-    console.log('Button clicked:', section);
+    console.log('Button clicked - v2:', section);
     setActiveSection(activeSection === section ? null : section);
   };
 
@@ -82,25 +82,21 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     
     // Create arrays for all media items
     const allPhotos = [
-      { src: '/DSC_69092.jpg', alt: 'Killer Nugget Photo 1', filename: 'Killer_Nugget_Photo_1.jpg', type: 'image' },
-      { src: '/DSC_6281.jpeg', alt: 'Killer Nugget Photo 2', filename: 'Killer_Nugget_Photo_2.jpeg', type: 'image' },
-      { src: '/DSC_6319.jpg', alt: 'Killer Nugget Photo 3', filename: 'Killer_Nugget_Photo_3.jpg', type: 'image' },
-      { src: '/DSC_6271.jpg', alt: 'Killer Nugget Photo 4', filename: 'Killer_Nugget_Photo_4.jpg', type: 'image' },
-      { src: '/DSC_6247.jpg', alt: 'Killer Nugget Photo 5', filename: 'Killer_Nugget_Photo_5.jpg', type: 'image' },
-      { src: '/DSC_2772.jpeg', alt: 'Killer Nugget Photo 6', filename: 'Killer_Nugget_Photo_6.jpeg', type: 'image' },
-      { src: '/DSC_1849.jpeg', alt: 'Killer Nugget Photo 7', filename: 'Killer_Nugget_Photo_7.jpeg', type: 'image' },
-      { src: '/DSC_1683.jpg', alt: 'Killer Nugget Photo 8', filename: 'Killer_Nugget_Photo_8.jpg', type: 'image' },
-      { src: '/DSC_6661.jpg', alt: 'Killer Nugget Photo 9', filename: 'Killer_Nugget_Photo_9.jpg', type: 'image' },
-      { src: '/diseño.png', alt: 'Visual Design 1', filename: 'Killer_Nugget_Visual_1.png', type: 'image' },
-      { src: '/diseño2.png', alt: 'Visual Design 2', filename: 'Killer_Nugget_Visual_2.png', type: 'image' },
-      { src: '/diseño 3.png', alt: 'Visual Design 3', filename: 'Killer_Nugget_Visual_3.png', type: 'image' }
+      { src: '/DSC_6271_copy.jpg', alt: 'Killer Nugget Photo 1', filename: 'Killer_Nugget_Photo_1.jpg', type: 'image' },
+      { src: '/DSC_0239.jpg', alt: 'Killer Nugget Photo 2', filename: 'Killer_Nugget_Photo_2.jpg', type: 'image' },
+      { src: '/DSC_0423.jpg', alt: 'Killer Nugget Photo 3', filename: 'Killer_Nugget_Photo_3.jpg', type: 'image' },
+      { src: '/DSC_1742-Mejorado-NR.jpg', alt: 'Killer Nugget Photo 4', filename: 'Killer_Nugget_Photo_4.jpg', type: 'image' },
+      { src: '/DSC00176.jpeg', alt: 'Killer Nugget Photo 5', filename: 'Killer_Nugget_Photo_5.jpeg', type: 'image' },
+      { src: '/photo6.jpg', alt: 'Killer Nugget Photo 6', filename: 'Killer_Nugget_Photo_6.jpg', type: 'image' },
+      { src: '/visual1.png', alt: 'Visual Design 1', filename: 'Killer_Nugget_Visual_1.png', type: 'image' },
+      { src: '/visual2.png', alt: 'Visual Design 2', filename: 'Killer_Nugget_Visual_2.png', type: 'image' }
     ];
     
     const allVideos = [
-      { src: '/Reel Killer 3.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4', type: 'video' },
-      { src: '/ANOTHER WORLD - REEL - KILLER FINAL (1).mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4', type: 'video' },
+      { src: '/reel_killer_3.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4', type: 'video' },
+      { src: '/another_world_reel.mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4', type: 'video' },
       { src: '/97445a85e47045b0b73189f5b7c12fff.mov', alt: 'Killer Nugget Video 4', filename: 'Killer_Nugget_Video_4.mov', type: 'video' },
-      { src: '/Sunset beats (1).mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4', type: 'video' }
+      { src: '/sunset_beats.mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4', type: 'video' }
     ];
     
     const allMedia = [...allPhotos, ...allVideos];
@@ -147,11 +143,25 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden">
       {/* Carlita-Style Background */}
       <div className="absolute inset-0 z-0 bg-black">
-        {/* FONDO FOTO - Background Image */}
-        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{backgroundImage: 'url(/Fondo.jpg)', backgroundPosition: 'calc(50% - 41px) center'}}></div>
+        {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          opacity: 0.3,
+          maskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)'
+        }}></div>
         
-        {/* FONDO FOTO - Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-black/40 to-gray-800/20"></div>
+        {/* FONDO FOTO - Background Image */}
+        <div 
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
+          style={{
+            backgroundImage: 'url(/Fondo.jpg)'
+          }}
+        ></div>
+        
+        {/* FONDO FOTO - Gradient Overlay (Darker) */}
+        <div className="absolute inset-0 bg-black/70"></div>
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
@@ -165,14 +175,6 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         {/* Subtle Vignette Effect */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent"></div>
-        
-        {/* Subtle Grid Pattern - Inspired by Hot Since 82 */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-          maskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)'
-        }}></div>
         
         {/* FONDO FOTO - Large Dominant Circles - Hidden */}
         {/* <div className="absolute -top-1/2 -left-1/2 w-full h-full border border-white/1 rounded-full"></div> */}
@@ -236,20 +238,8 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
             {/* Header Menu */}
       <header className="fixed top-0 left-0 right-0 z-30">
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
-          {/* Mobile Layout - Stacked and Centered */}
-          <div className="md:hidden flex flex-col items-center space-y-2 sm:space-y-3">
-            <div className="h-6 sm:h-8 w-16 sm:w-20 bg-white/5 flex items-center justify-center border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <img 
-                src="/logo.png" 
-                alt="" 
-                className="h-4 sm:h-5 w-auto object-contain"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              <span className="text-white text-sm font-light tracking-[0.2em] hover:text-gray-300 transition-colors uppercase hidden"></span>
-            </div>
+          {/* Mobile Layout - Centered */}
+          <div className="md:hidden flex flex-col items-center">
             <nav className="flex flex-wrap justify-center space-x-0.5 sm:space-x-1 text-xs sm:text-sm font-light tracking-[0.15em]">
               <button 
                 onClick={() => toggleSection('about')}
@@ -282,21 +272,9 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
             </nav>
           </div>
           
-          {/* Desktop Layout - Side by Side */}
-          <div className="hidden md:flex justify-between items-center">
-            <div className="h-12 w-32 bg-white/5 flex items-center justify-center border border-white/10 hover:bg-white/10 transition-all duration-300 translate-x-[340px]">
-              <img 
-                src="/logo.png" 
-                alt="" 
-                className="h-8 w-auto object-contain"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              <span className="text-white text-lg font-light tracking-[0.2em] hover:text-gray-300 transition-colors uppercase hidden"></span>
-            </div>
-            <nav className="flex flex-wrap justify-center space-x-1 text-lg lg:text-xl font-light tracking-[0.15em] -translate-x-[320px]">
+          {/* Desktop Layout - Centered */}
+          <div className="hidden md:flex justify-center items-center">
+            <nav className="flex flex-wrap justify-center space-x-1 text-lg lg:text-xl font-light tracking-[0.15em]">
               <button 
                 onClick={() => toggleSection('about')}
                 className="px-4 py-2 hover:text-gray-300 transition-colors cursor-pointer relative group"
@@ -361,33 +339,17 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                   {/* Latest Releases */}
                   <div className="mb-8 md:mb-16">
                     <h3 className="text-xl md:text-2xl font-light mb-4 md:mb-8 tracking-[0.1em] uppercase">Latest Releases</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto">
-                      <div>
-                        <h4 className="text-lg font-light mb-4 tracking-[0.05em]">Snack Box</h4>
-                        <iframe 
-                          style={{borderRadius: '12px'}} 
-                          src="https://open.spotify.com/embed/track/5Mdifo4tGGxTpwryNmWXeI?utm_source=generator" 
-                          width="100%" 
-                          height="400" 
-                          frameBorder="0" 
-                          allowFullScreen="" 
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                          loading="lazy"
-                        ></iframe>
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-light mb-4 tracking-[0.05em]">Twister</h4>
-                        <iframe 
-                          style={{borderRadius: '12px'}} 
-                          src="https://open.spotify.com/embed/track/3kk8cN3LLeOQ1uHeJNDB9m?utm_source=generator" 
-                          width="100%" 
-                          height="400" 
-                          frameBorder="0" 
-                          allowFullScreen="" 
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                          loading="lazy"
-                        ></iframe>
-                      </div>
+                    <div className="max-w-4xl mx-auto px-4">
+                      <iframe 
+                        style={{borderRadius: '12px'}} 
+                        src="https://open.spotify.com/embed/track/0rqt0hvn2AS6XeVsC57yJy?utm_source=generator&theme=0" 
+                        width="100%" 
+                        height="352" 
+                        frameBorder="0" 
+                        allowFullScreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy"
+                      ></iframe>
                     </div>
                   </div>
 
@@ -397,7 +359,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                     <div className="max-w-4xl mx-auto px-4">
                       <iframe 
                         style={{borderRadius: '12px'}} 
-                        src="https://open.spotify.com/embed/artist/4XxlOxSpBGPwmAeEHgvGA5?utm_source=generator" 
+                        src="https://open.spotify.com/embed/artist/4XxlOxSpBGPwmAeEHgvGA5?utm_source=generator&theme=0" 
                         width="100%" 
                         height="352" 
                         frameBorder="0" 
@@ -463,15 +425,12 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                     <h3 className="text-xl md:text-2xl font-light mb-6 md:mb-8 tracking-[0.1em] uppercase">Photos</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
                       {[
-                        { src: '/DSC_69092.jpg', alt: 'Killer Nugget Photo 1', filename: 'Killer_Nugget_Photo_1.jpg' },
-                        { src: '/DSC_6281.jpeg', alt: 'Killer Nugget Photo 2', filename: 'Killer_Nugget_Photo_2.jpeg' },
-                        { src: '/DSC_6319.jpg', alt: 'Killer Nugget Photo 3', filename: 'Killer_Nugget_Photo_3.jpg' },
-                        { src: '/DSC_6271.jpg', alt: 'Killer Nugget Photo 4', filename: 'Killer_Nugget_Photo_4.jpg' },
-                        { src: '/DSC_6247.jpg', alt: 'Killer Nugget Photo 5', filename: 'Killer_Nugget_Photo_5.jpg' },
-                        { src: '/DSC_2772.jpeg', alt: 'Killer Nugget Photo 6', filename: 'Killer_Nugget_Photo_6.jpeg' },
-                        { src: '/DSC_1849.jpeg', alt: 'Killer Nugget Photo 7', filename: 'Killer_Nugget_Photo_7.jpeg' },
-                        { src: '/DSC_1683.jpg', alt: 'Killer Nugget Photo 8', filename: 'Killer_Nugget_Photo_8.jpg' },
-                        { src: '/DSC_6661.jpg', alt: 'Killer Nugget Photo 9', filename: 'Killer_Nugget_Photo_9.jpg' }
+                        { src: '/DSC_6271_copy.jpg', alt: 'Killer Nugget Photo 1', filename: 'Killer_Nugget_Photo_1.jpg' },
+                        { src: '/DSC_0239.jpg', alt: 'Killer Nugget Photo 2', filename: 'Killer_Nugget_Photo_2.jpg' },
+                        { src: '/DSC_0423.jpg', alt: 'Killer Nugget Photo 3', filename: 'Killer_Nugget_Photo_3.jpg' },
+                        { src: '/DSC_1742-Mejorado-NR.jpg', alt: 'Killer Nugget Photo 4', filename: 'Killer_Nugget_Photo_4.jpg' },
+                        { src: '/DSC00176.jpeg', alt: 'Killer Nugget Photo 5', filename: 'Killer_Nugget_Photo_5.jpeg' },
+                        { src: '/photo6.jpg', alt: 'Killer Nugget Photo 6', filename: 'Killer_Nugget_Photo_6.jpg' }
                       ].map((photo, index) => (
                         <div key={index} className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia(photo.src, 'image', photo.alt)}>
                           <img 
@@ -500,10 +459,10 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                   {/* Visuals Section */}
                   <div className="mb-12 md:mb-16">
                     <h3 className="text-xl md:text-2xl font-light mb-6 md:mb-8 tracking-[0.1em] uppercase">Visuals</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-                      <div className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia('/diseño.png', 'image', 'Visual Design 1')}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+                      <div className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia('/visual1.png', 'image', 'Visual Design 1')}>
                         <img 
-                          src="/diseño.png" 
+                          src="/visual1.png" 
                           alt="Visual Design 1" 
                           className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         />
@@ -512,7 +471,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation();
-                                downloadMedia('/diseño.png', 'Killer_Nugget_Visual_1.png');
+                                downloadMedia('/visual1.png', 'Killer_Nugget_Visual_1.png');
                               }}
                               className="bg-white/60 text-black px-3 py-1.5 font-light tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-300 text-xs rounded backdrop-blur-sm"
                             >
@@ -522,9 +481,9 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                         </div>
                       </div>
                       
-                      <div className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia('/diseño2.png', 'image', 'Visual Design 2')}>
+                      <div className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia('/visual2.png', 'image', 'Visual Design 2')}>
                         <img 
-                          src="/diseño2.png" 
+                          src="/visual2.png" 
                           alt="Visual Design 2" 
                           className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         />
@@ -533,28 +492,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation();
-                                downloadMedia('/diseño2.png', 'Killer_Nugget_Visual_2.png');
-                              }}
-                              className="bg-white/60 text-black px-3 py-1.5 font-light tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-300 text-xs rounded backdrop-blur-sm"
-                            >
-                              Download
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia('/diseño 3.png', 'image', 'Visual Design 3')}>
-                        <img 
-                          src="/diseño 3.png" 
-                          alt="Visual Design 3" 
-                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="absolute bottom-4 right-4">
-                            <button 
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                downloadMedia('/diseño 3.png', 'Killer_Nugget_Visual_3.png');
+                                downloadMedia('/visual2.png', 'Killer_Nugget_Visual_2.png');
                               }}
                               className="bg-white/60 text-black px-3 py-1.5 font-light tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-300 text-xs rounded backdrop-blur-sm"
                             >
@@ -571,10 +509,10 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                     <h3 className="text-xl md:text-2xl font-light mb-6 md:mb-8 tracking-[0.1em] uppercase">Videos</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
                       {[
-                        { src: '/Reel Killer 3.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4' },
-                        { src: '/ANOTHER WORLD - REEL - KILLER FINAL (1).mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4' },
+                        { src: '/reel_killer_3.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4' },
+                        { src: '/another_world_reel.mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4' },
                         { src: '/97445a85e47045b0b73189f5b7c12fff.mov', alt: 'Killer Nugget Video 4', filename: 'Killer_Nugget_Video_4.mov' },
-                        { src: '/Sunset beats (1).mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4' }
+                        { src: '/sunset_beats.mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4' }
                       ].map((video, index) => (
                         <div key={index} className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia(video.src, 'video', video.alt)}>
                           <video 
@@ -649,36 +587,6 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                         </p>
                       </>
                     )}
-                  </div>
-
-                  {/* Bio & Info Downloads */}
-                  <div className="mt-12 md:mt-16">
-                    <h3 className="text-xl md:text-2xl font-light mb-6 md:mb-8 tracking-[0.1em] uppercase">Downloads</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-                      <div className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 p-6">
-                        <div className="text-center">
-                          <div className="text-3xl mb-3">📄</div>
-                          <h4 className="text-lg font-light mb-2 tracking-[0.05em]">Bio</h4>
-                          <p className="text-sm text-gray-400 tracking-[0.05em] mb-4">Short bio for press releases</p>
-                          <button 
-                            onClick={downloadBio}
-                            className="bg-white text-black px-4 py-2 font-light tracking-[0.1em] uppercase hover:bg-gray-200 transition-colors text-sm"
-                          >
-                            Download
-                          </button>
-                        </div>
-                      </div>
-                      <div className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 p-6">
-                        <div className="text-center">
-                          <div className="text-3xl mb-3">📋</div>
-                          <h4 className="text-lg font-light mb-2 tracking-[0.05em]">Technical Rider</h4>
-                          <p className="text-sm text-gray-400 tracking-[0.05em] mb-4">Technical requirements</p>
-                          <button className="bg-white text-black px-4 py-2 font-light tracking-[0.1em] uppercase hover:bg-gray-200 transition-colors text-sm">
-                            Download
-                          </button>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               )}
@@ -880,3 +788,4 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     </div>
   );
 }
+
