@@ -154,9 +154,10 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         
         {/* FONDO FOTO - Background Image */}
         <div 
-          className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
+          className="fixed inset-0 bg-contain bg-no-repeat pointer-events-none" 
           style={{
-            backgroundImage: 'url(/Fondo.jpg)'
+            backgroundImage: 'url(/Fondo.jpg)',
+            backgroundPosition: 'center bottom'
           }}
         ></div>
         
@@ -236,7 +237,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </div>
 
             {/* Header Menu */}
-      <header className="fixed top-[25px] left-0 right-0 z-30">
+      <header className="fixed top-[27px] left-0 right-0 z-30">
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
