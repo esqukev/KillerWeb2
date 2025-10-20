@@ -136,7 +136,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [selectedMedia]);
+  }, [selectedMedia, navigateMedia]);
   
 
   return (
@@ -559,13 +559,13 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                     {aboutLanguage === 'english' ? (
                       <>
                         <p className="hover:scale-[1.08] transition-all duration-500 ease-out cursor-pointer inline-block" style={{transformOrigin: 'center center'}}>
-                          Killer Nugget is an electronic music producer from Costa Rica, crafting driving house rhythms infused with sleek, minimal textures. Inspired by the global underground scene, his sound is built for deep club sessions and high-rotation playlists alike, bridging the underground's groove-forward energy with modern, high-fidelity production. Killer Nugget continues to refine his craft — pushing sonic and visual boundaries with each new release.
+                          Killer Nugget is an electronic music producer from Costa Rica, crafting driving house rhythms infused with sleek, minimal textures. Inspired by the global underground scene, his sound is built for deep club sessions and high-rotation playlists alike, bridging the underground&apos;s groove-forward energy with modern, high-fidelity production. Killer Nugget continues to refine his craft — pushing sonic and visual boundaries with each new release.
                         </p>
                         <p className="hover:scale-[1.08] transition-all duration-500 ease-out cursor-pointer inline-block" style={{transformOrigin: 'center center'}}>
-                          Currently focused full-time on music production, Killer Nugget is honing his sound under the influence of some of the world's top producers — including Josh Baker, Kolter, Sidney Charles, Gene On Earth, M-High, and more. His approach is rooted in clean, tight grooves and a commitment to constantly evolving his style.
+                          Currently focused full-time on music production, Killer Nugget is honing his sound under the influence of some of the world&apos;s top producers — including Josh Baker, Kolter, Sidney Charles, Gene On Earth, M-High, and more. His approach is rooted in clean, tight grooves and a commitment to constantly evolving his style.
                         </p>
                         <p className="hover:scale-[1.08] transition-all duration-500 ease-out cursor-pointer inline-block" style={{transformOrigin: 'center center'}}>
-                          Beyond his role as a producer and DJ, Killer Nugget has also played a key visual role in the Costa Rican electronic music scene — working as a photographer for some of the country's biggest festivals and events. His portfolio includes ongoing work with Electric Animals, Ocaso Festival, BPM Festival and many many more, helping shape the visual identity of the underground movement in Central America.
+                          Beyond his role as a producer and DJ, Killer Nugget has also played a key visual role in the Costa Rican electronic music scene — working as a photographer for some of the country&apos;s biggest festivals and events. His portfolio includes ongoing work with Electric Animals, Ocaso Festival, BPM Festival and many many more, helping shape the visual identity of the underground movement in Central America.
                         </p>
                         <p className="hover:scale-[1.08] transition-all duration-500 ease-out cursor-pointer inline-block" style={{transformOrigin: 'center center'}}>
                           With a deep-rooted passion for sound design, groove, and underground culture, Killer Nugget is emerging as one promising name in the region. Whether behind the decks or in the studio, his goal remains the same — to move dancefloors and push sonic boundaries with every beat.
