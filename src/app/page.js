@@ -154,9 +154,12 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         
         {/* FONDO FOTO - Background Image */}
         <div 
-          className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
+          className="absolute inset-0 bg-center bg-no-repeat" 
           style={{
-            backgroundImage: 'url(/Fondo.jpg)'
+            backgroundImage: 'url(/Fondo.jpg)',
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center center'
           }}
         ></div>
         
