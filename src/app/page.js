@@ -140,9 +140,9 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
   
 
   return (
-    <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden">
+    <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden" style={{position: 'relative', overflow: 'hidden'}}>
       {/* Carlita-Style Background */}
-      <div className="absolute inset-0 z-0 bg-black">
+      <div className="fixed inset-0 z-0 bg-black" style={{top: '-100vh', bottom: '-100vh', height: '300vh'}}>
         {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
         <div className="absolute inset-0" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
@@ -218,7 +218,17 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         <div className="absolute top-1/5 left-3/4 w-1 h-1 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '7s'}}></div>
         <div className="absolute bottom-1/5 right-3/4 w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '7.5s'}}></div>
         
-        <style jsx>{`
+        <style jsx global>{`
+          body {
+            overflow-x: hidden;
+            overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+          }
+          
+          html {
+            overscroll-behavior: none;
+          }
+          
           @keyframes moveLight {
             0% { --x: 0%; --y: 0%; }
             25% { --x: 100%; --y: 0%; }
