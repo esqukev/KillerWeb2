@@ -230,6 +230,17 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
             overscroll-behavior: none;
           }
           
+          a, button {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+          }
+          
+          a:focus, button:focus {
+            outline: none;
+          }
+          
           @keyframes moveLight {
             0% { --x: 0%; --y: 0%; }
             25% { --x: 100%; --y: 0%; }
