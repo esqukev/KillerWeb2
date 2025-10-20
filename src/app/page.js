@@ -239,7 +239,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </div>
 
             {/* Header Menu */}
-      <header className="fixed top-0 left-0 right-0 z-30">
+      <header className="fixed top-[20px] left-0 right-0 z-30">
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
@@ -724,7 +724,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       )}
 
       {/* Footer */}
-      <footer className="fixed bottom-0 left-4 md:left-8 right-4 md:right-8 z-20">
+      <footer className="fixed bottom-[9px] left-4 md:left-8 right-4 md:right-8 z-20">
         <div className="text-center" style={{paddingBottom: '8px'}}>
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-4 md:space-x-6 mb-4 md:mb-6">
