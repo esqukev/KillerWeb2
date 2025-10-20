@@ -143,15 +143,6 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden" style={{position: 'relative', overflow: 'hidden'}}>
       {/* Carlita-Style Background */}
       <div className="fixed inset-0 z-0 bg-black" style={{top: '-100vh', bottom: '-100vh', height: '300vh'}}>
-        {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
-        <div className="fixed inset-0" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-          opacity: 0.3,
-          maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
-          zIndex: 1
-        }}></div>
         
         {/* FONDO FOTO - Background Image */}
         <div 
@@ -160,12 +151,22 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
             backgroundImage: 'url(/Fondo.jpg)',
             backgroundSize: 'contain',
             backgroundPosition: 'center bottom',
-            zIndex: 2
+            zIndex: 1
           }}
         ></div>
         
         {/* FONDO FOTO - Gradient Overlay (Darker) */}
-        <div className="fixed inset-0 bg-black/70" style={{zIndex: 3}}></div>
+        <div className="fixed inset-0 bg-black/70" style={{zIndex: 2}}></div>
+        
+        {/* Subtle Grid Pattern - ON TOP - Brighter to show through */}
+        <div className="fixed inset-0 pointer-events-none" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          opacity: 0.3,
+          maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 85%)',
+          zIndex: 3
+        }}></div>
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
