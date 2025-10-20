@@ -319,7 +319,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </header>
 
       {/* Main Content - Inside Center Circle */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 flex items-center justify-center pointer-events-none" style={{width: '60vw', height: '60vh', isolation: 'isolate'}}>
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 flex items-center justify-center pointer-events-none" style={{width: '60vw', height: '60vh', isolation: 'isolate'}}>
         <div className="text-center opacity-40 hover:opacity-80 transition-opacity duration-500 pointer-events-auto relative z-40" style={{isolation: 'isolate'}}>
           <div className="text-4xl md:text-6xl lg:text-8xl font-light tracking-[0.2em] mb-2 md:mb-4 text-white relative z-40" style={{position: 'relative', zIndex: 40}}>KILLER NUGGET</div>
           <div className="text-sm md:text-lg lg:text-xl font-light tracking-[0.1em] text-gray-300 relative z-40" style={{position: 'relative', zIndex: 40}}>House Music Straight From The Jungle</div>
