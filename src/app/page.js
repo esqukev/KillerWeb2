@@ -249,7 +249,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </div>
 
             {/* Header Menu */}
-      <header className="fixed top-[20px] left-0 right-0 z-30">
+      <header className="fixed top-[25px] left-0 right-0 z-30">
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
