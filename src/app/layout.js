@@ -1,4 +1,4 @@
-import { Inter, Orbitron, Cinzel } from "next/font/google";
+import { Inter, Orbitron, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,10 +11,10 @@ const orbitron = Orbitron({
   subsets: ["latin"],
 });
 
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "900"],
 });
 
 export const metadata = {
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#000000" />
       </head>
       <body
-        className={`${inter.variable} ${orbitron.variable} ${cinzel.variable} antialiased`}
+        className={`${inter.variable} ${orbitron.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
       </body>
