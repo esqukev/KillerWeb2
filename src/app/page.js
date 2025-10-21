@@ -71,13 +71,23 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     setMediaType(null);
   };
 
-  const downloadMedia = (src, filename) => {
-    const link = document.createElement('a');
-    link.href = src;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const downloadMedia = async (src, filename) => {
+    try {
+      const response = await fetch(src);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Fallback: open in new tab
+      window.open(src, '_blank');
+    }
   };
 
   const navigateMedia = (direction) => {
@@ -554,10 +564,12 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                       ].map((video, index) => (
                         <div key={index} className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia(video.src, 'video', video.alt)}>
                           <video 
-                            src={video.src} 
+                            src={video.src}
+                            poster={video.src.replace(/\.(mp4|mov)$/, '.jpg')}
                             className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500"
                             muted
                             preload="metadata"
+                            playsInline
                           />
                           <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div className="absolute bottom-4 right-4">
@@ -732,10 +744,12 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                 />
               ) : mediaType === 'video' ? (
                 <video 
-                  src={selectedMedia} 
+                  src={selectedMedia}
+                  poster={selectedMedia ? selectedMedia.replace(/\.(mp4|mov)$/, '.jpg') : ''}
                   controls 
                   className="w-full h-auto max-h-[80vh] rounded-lg"
                   autoPlay
+                  playsInline
                 >
                   Your browser does not support the video tag.
                 </video>
