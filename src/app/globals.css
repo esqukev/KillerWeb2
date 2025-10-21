@@ -5,6 +5,14 @@
 /* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Rugen';
+  src: url('/fonts/RugenExpanded.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
@@ -13,6 +21,7 @@
   --dark-gray: #1a1a1a;
   --medium-gray: #333333;
   --light-gray: #666666;
+  --font-rugen: 'Rugen', serif;
 }
 
 

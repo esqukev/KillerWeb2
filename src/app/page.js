@@ -304,14 +304,14 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </div>
 
             {/* Fixed Title Above Nav */}
-      <div className="fixed top-0 left-0 right-0 z-40 flex justify-center pt-3 md:pt-4">
-        <h1 className="text-white text-2xl md:text-3xl font-bold tracking-tight" style={{fontFamily: 'var(--font-playfair)', letterSpacing: '-0.02em'}}>
+      <div className="fixed top-0 left-0 right-0 z-40 flex justify-center pt-2 md:pt-3">
+        <h1 className="text-white font-bold tracking-tight" style={{fontFamily: 'var(--font-rugen)', letterSpacing: '-0.02em', fontSize: '20px'}}>
           KILLER NUGGET
         </h1>
       </div>
 
       {/* Header Menu */}
-      <header className={`fixed left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-[50px] md:translate-y-[60px]' : '-translate-y-full'}`}>
+      <header className={`fixed left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-[38px] md:translate-y-[45px]' : '-translate-y-full'}`}>
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
