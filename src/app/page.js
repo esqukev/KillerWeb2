@@ -303,12 +303,19 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         `}        </style>
       </div>
 
-            {/* Header Menu */}
-      <header className={`fixed left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-[27px]' : '-translate-y-full'}`}>
+            {/* Fixed Title Above Nav */}
+      <div className="fixed top-0 left-0 right-0 z-40 flex justify-center pt-4 md:pt-6">
+        <h1 className="text-white text-2xl md:text-4xl font-cinzel font-bold tracking-[0.3em]" style={{fontFamily: 'var(--font-cinzel)'}}>
+          KILLER NUGGET
+        </h1>
+      </div>
+
+      {/* Header Menu */}
+      <header className={`fixed left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-[75px] md:translate-y-[95px]' : '-translate-y-full'}`}>
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
-            <nav className="flex flex-wrap justify-center space-x-0.5 sm:space-x-1 font-light tracking-[0.15em]" style={{fontSize: '17px'}}>
+            <nav className="flex flex-wrap justify-center space-x-0.5 sm:space-x-1 font-light tracking-[0.15em]" style={{fontSize: '15px'}}>
               <button 
                 onClick={() => toggleSection('about')}
                 className="px-1.5 sm:px-2 py-0.5 sm:py-1 hover:text-gray-300 transition-colors cursor-pointer relative group"
@@ -342,7 +349,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           
           {/* Desktop Layout - Centered */}
           <div className="hidden md:flex justify-center items-center">
-            <nav className="flex flex-wrap justify-center space-x-1 font-light tracking-[0.15em]" style={{fontSize: '23px'}}>
+            <nav className="flex flex-wrap justify-center space-x-1 font-light tracking-[0.15em]" style={{fontSize: '21px'}}>
               <button 
                 onClick={() => toggleSection('about')}
                 className="px-4 py-2 hover:text-gray-300 transition-colors cursor-pointer relative group"
