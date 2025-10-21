@@ -214,7 +214,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         <div 
           className="fixed inset-0 bg-contain bg-no-repeat pointer-events-none" 
           style={{
-            backgroundImage: 'url(/Fondo.jpg)',
+            backgroundImage: 'url(/Fondo2.png)',
             backgroundPosition: 'center bottom'
           }}
         ></div>
