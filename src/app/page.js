@@ -9,6 +9,7 @@ export default function Home() {
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [mediaType, setMediaType] = useState(null);
   const [showNav, setShowNav] = useState(true);
+  const [showFooter, setShowFooter] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleSection = (section) => {
@@ -140,7 +141,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [selectedMedia, navigateMedia]);
   
-  // Hide/Show nav on scroll with threshold
+  // Hide/Show nav and footer on scroll with threshold
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -152,9 +153,11 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         // Scrolling down
         setShowNav(false);
+        setShowFooter(true); // Footer appears when scrolling down
       } else if (currentScrollY < lastScrollY) {
         // Scrolling up - requires scrolling at least 10px up
         setShowNav(true);
+        setShowFooter(false); // Footer hides when scrolling up
       }
       
       setLastScrollY(currentScrollY);
@@ -756,7 +759,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       )}
 
       {/* Footer */}
-      <footer className="absolute bottom-[8px] left-4 md:left-8 right-4 md:right-8 z-20" style={{top: 'calc(100vh - 65px)'}}>
+      <footer className={`absolute left-4 md:left-8 right-4 md:right-8 z-20 transition-transform duration-500 ease-in-out ${showFooter ? 'translate-y-0' : 'translate-y-full'}`} style={{top: 'calc(100vh - 65px)'}}>
         <div className="text-center" style={{paddingBottom: '8px'}}>
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-4 md:space-x-6 mb-4 md:mb-6">
