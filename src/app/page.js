@@ -308,7 +308,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
-            <nav className="flex flex-wrap justify-center space-x-0.5 sm:space-x-1 text-xs sm:text-sm font-light tracking-[0.15em]">
+            <nav className="flex flex-wrap justify-center space-x-0.5 sm:space-x-1 font-light tracking-[0.15em]" style={{fontSize: '17px'}}>
               <button 
                 onClick={() => toggleSection('about')}
                 className="px-1.5 sm:px-2 py-0.5 sm:py-1 hover:text-gray-300 transition-colors cursor-pointer relative group"
@@ -342,7 +342,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           
           {/* Desktop Layout - Centered */}
           <div className="hidden md:flex justify-center items-center">
-            <nav className="flex flex-wrap justify-center space-x-1 text-lg lg:text-xl font-light tracking-[0.15em]">
+            <nav className="flex flex-wrap justify-center space-x-1 font-light tracking-[0.15em]" style={{fontSize: '23px'}}>
               <button 
                 onClick={() => toggleSection('about')}
                 className="px-4 py-2 hover:text-gray-300 transition-colors cursor-pointer relative group"
@@ -379,8 +379,8 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       {/* Main Content - Inside Center Circle */}
       <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 flex items-center justify-center pointer-events-none" style={{width: '60vw', height: '60vh', isolation: 'isolate'}}>
         <div className="text-center opacity-40 hover:opacity-80 transition-opacity duration-500 pointer-events-auto relative z-40" style={{isolation: 'isolate'}}>
-          <div className="text-4xl md:text-6xl lg:text-8xl font-light tracking-[0.2em] mb-2 md:mb-4 text-white relative z-40" style={{position: 'relative', zIndex: 40}}>KILLER NUGGET</div>
-          <div className="text-sm md:text-lg lg:text-xl font-light tracking-[0.1em] text-gray-300 relative z-40" style={{position: 'relative', zIndex: 40}}>House Music Straight From The Jungle</div>
+          {/* <div className="text-4xl md:text-6xl lg:text-8xl font-light tracking-[0.2em] mb-2 md:mb-4 text-white relative z-40" style={{position: 'relative', zIndex: 40}}>KILLER NUGGET</div> */}
+          {/* <div className="text-sm md:text-lg lg:text-xl font-light tracking-[0.1em] text-gray-300 relative z-40" style={{position: 'relative', zIndex: 40}}>House Music Straight From The Jungle</div> */}
         </div>
       </div>
 
