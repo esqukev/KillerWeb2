@@ -71,24 +71,43 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     setMediaType(null);
   };
 
-  const downloadMedia = (src, filename) => {
-    // For Cloudinary videos, modify URL to force download
-    let downloadUrl = src;
-    
-    if (src.includes('cloudinary.com')) {
-      // Insert fl_attachment flag before the filename
-      downloadUrl = src.replace('/upload/', `/upload/fl_attachment:${filename}/`);
+  const downloadMedia = async (src, filename) => {
+    try {
+      // For Cloudinary, use fl_attachment to force download
+      let downloadUrl = src;
+      
+      if (src.includes('cloudinary.com')) {
+        // Insert fl_attachment flag before the version number
+        downloadUrl = src.replace('/upload/', '/upload/fl_attachment/');
+      }
+      
+      // Try to fetch and download as blob
+      const response = await fetch(downloadUrl, {
+        mode: 'cors',
+        credentials: 'omit'
+      });
+      
+      if (!response.ok) throw new Error('Download failed');
+      
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Clean up
+      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 100);
+      
+    } catch (error) {
+      console.error('Download error:', error);
+      // Fallback: open with fl_attachment in new tab
+      const fallbackUrl = src.replace('/upload/', '/upload/fl_attachment/');
+      window.open(fallbackUrl, '_blank');
     }
-    
-    // Create temporary link and trigger download
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = filename;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   const navigateMedia = (direction) => {
