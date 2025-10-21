@@ -220,7 +220,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         ></div>
         
         {/* FONDO FOTO - Gradient Overlay (Darker) */}
-        <div className="fixed inset-0 bg-black/60 pointer-events-none"></div>
+        <div className="fixed inset-0 bg-black/50 pointer-events-none"></div>
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
