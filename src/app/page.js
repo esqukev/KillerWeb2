@@ -228,7 +228,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         {/* Animated Gradient Light */}
         <div className="absolute inset-0" style={{
           background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(100, 120, 255, 0.08) 0%, rgba(150, 100, 255, 0.04) 20%, transparent 50%)',
-          animation: 'moveGradient 25s ease-in-out infinite',
+          animation: 'moveGradient 45s ease-in-out infinite',
           mixBlendMode: 'screen'
         }}></div>
         
@@ -286,11 +286,15 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           }
           
           @keyframes moveGradient {
-            0% { --x: 30%; --y: 20%; }
-            25% { --x: 70%; --y: 30%; }
-            50% { --x: 60%; --y: 70%; }
-            75% { --x: 20%; --y: 60%; }
-            100% { --x: 30%; --y: 20%; }
+            0% { --x: 35%; --y: 25%; }
+            12.5% { --x: 45%; --y: 30%; }
+            25% { --x: 60%; --y: 35%; }
+            37.5% { --x: 65%; --y: 50%; }
+            50% { --x: 60%; --y: 65%; }
+            62.5% { --x: 45%; --y: 70%; }
+            75% { --x: 30%; --y: 60%; }
+            87.5% { --x: 28%; --y: 40%; }
+            100% { --x: 35%; --y: 25%; }
           }
           
           @keyframes fadeIn {
