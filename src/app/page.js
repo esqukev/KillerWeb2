@@ -248,7 +248,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         {/* <div className="absolute -bottom-1/2 -right-1/2 w-full h-full border border-white/0.5 rounded-full" style={{boxShadow: 'inset 0 0 20px rgba(0, 0, 0, 0.3)'}}></div> */}
         
         {/* Center Large Circle */}
-        <div className="absolute top-1/2 left-1/2 w-full h-full border-2 border-white/0.5 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+        {/* <div className="absolute top-1/2 left-1/2 w-full h-full border-2 border-white/0.5 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div> */}
         
         {/* Geometric Lines */}
         <div className="absolute top-1/4 left-0 right-0 h-[0.5px] bg-gradient-to-r from-transparent via-white/0.5 to-transparent"></div>
