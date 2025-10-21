@@ -210,6 +210,13 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)'
         }}></div>
         
+        {/* Animated Gradient Light - BEHIND IMAGE */}
+        <div className="absolute inset-0" style={{
+          background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(100, 120, 255, 0.12) 0%, rgba(150, 100, 255, 0.06) 20%, transparent 50%)',
+          animation: 'moveGradient 20s ease-in-out infinite',
+          mixBlendMode: 'screen'
+        }}></div>
+        
         {/* FONDO FOTO - Background Image */}
         <div 
           className="fixed inset-0 bg-contain bg-no-repeat pointer-events-none" 
@@ -224,13 +231,6 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
-        
-        {/* Animated Gradient Light */}
-        <div className="absolute inset-0" style={{
-          background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(100, 120, 255, 0.08) 0%, rgba(150, 100, 255, 0.04) 20%, transparent 50%)',
-          animation: 'moveGradient 45s ease-in-out infinite',
-          mixBlendMode: 'screen'
-        }}></div>
         
         {/* Subtle Vignette Effect */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
