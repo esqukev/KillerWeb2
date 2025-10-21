@@ -225,10 +225,11 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
         
-        {/* Very Subtle Moving Light */}
+        {/* Animated Gradient Light */}
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(circle at var(--x, 0%) var(--y, 0%), rgba(255,255,255,0.02) 0%, transparent 30%)',
-          animation: 'moveLight 45s linear infinite'
+          background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(100, 120, 255, 0.08) 0%, rgba(150, 100, 255, 0.04) 20%, transparent 50%)',
+          animation: 'moveGradient 25s ease-in-out infinite',
+          mixBlendMode: 'screen'
         }}></div>
         
         {/* Subtle Vignette Effect */}
@@ -284,12 +285,12 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
             overscroll-behavior: none;
           }
           
-          @keyframes moveLight {
-            0% { --x: 0%; --y: 0%; }
-            25% { --x: 100%; --y: 0%; }
-            50% { --x: 100%; --y: 100%; }
-            75% { --x: 0%; --y: 100%; }
-            100% { --x: 0%; --y: 0%; }
+          @keyframes moveGradient {
+            0% { --x: 30%; --y: 20%; }
+            25% { --x: 70%; --y: 30%; }
+            50% { --x: 60%; --y: 70%; }
+            75% { --x: 20%; --y: 60%; }
+            100% { --x: 30%; --y: 20%; }
           }
           
           @keyframes fadeIn {
