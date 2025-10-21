@@ -201,11 +201,13 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden">
       {/* Carlita-Style Background */}
       <div className="absolute inset-0 z-0 bg-black">
-        {/* Subtle Grid Pattern - BEHIND IMAGE - WITHOUT oval mask */}
+        {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
         <div className="absolute inset-0" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
-          opacity: 0.35
+          opacity: 0.35,
+          maskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)'
         }}></div>
         
         {/* FONDO FOTO - Background Image */}
@@ -306,7 +308,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
-            <nav className="flex flex-wrap justify-center space-x-0.5 sm:space-x-1 text-sm sm:text-base font-light tracking-[0.15em]">
+            <nav className="flex flex-wrap justify-center space-x-0.5 sm:space-x-1 text-xs sm:text-sm font-light tracking-[0.15em]">
               <button 
                 onClick={() => toggleSection('about')}
                 className="px-1.5 sm:px-2 py-0.5 sm:py-1 hover:text-gray-300 transition-colors cursor-pointer relative group"
@@ -340,7 +342,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
           
           {/* Desktop Layout - Centered */}
           <div className="hidden md:flex justify-center items-center">
-            <nav className="flex flex-wrap justify-center space-x-1 text-xl lg:text-2xl font-light tracking-[0.15em]">
+            <nav className="flex flex-wrap justify-center space-x-1 text-lg lg:text-xl font-light tracking-[0.15em]">
               <button 
                 onClick={() => toggleSection('about')}
                 className="px-4 py-2 hover:text-gray-300 transition-colors cursor-pointer relative group"
