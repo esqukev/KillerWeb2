@@ -71,23 +71,24 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     setMediaType(null);
   };
 
-  const downloadMedia = async (src, filename) => {
-    try {
-      const response = await fetch(src);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Download failed:', error);
-      // Fallback: open in new tab
-      window.open(src, '_blank');
+  const downloadMedia = (src, filename) => {
+    // For Cloudinary videos, modify URL to force download
+    let downloadUrl = src;
+    
+    if (src.includes('cloudinary.com')) {
+      // Insert fl_attachment flag before the filename
+      downloadUrl = src.replace('/upload/', `/upload/fl_attachment:${filename}/`);
     }
+    
+    // Create temporary link and trigger download
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = filename;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const navigateMedia = (direction) => {
