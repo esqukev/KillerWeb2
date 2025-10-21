@@ -756,7 +756,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       )}
 
       {/* Footer */}
-      <footer className="fixed bottom-[8px] left-4 md:left-8 right-4 md:right-8 z-20">
+      <footer className="relative mt-20 mb-[8px] left-4 md:left-8 right-4 md:right-8 z-20">
         <div className="text-center" style={{paddingBottom: '8px'}}>
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-4 md:space-x-6 mb-4 md:mb-6">
