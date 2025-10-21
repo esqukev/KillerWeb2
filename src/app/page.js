@@ -220,7 +220,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         ></div>
         
         {/* FONDO FOTO - Gradient Overlay (Darker) */}
-        <div className="fixed inset-0 bg-black/50 pointer-events-none"></div>
+        <div className="fixed inset-0 bg-black/35 pointer-events-none"></div>
         
         {/* FONDO FIGURA - Gradient Background (Commented) */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black to-gray-800/80"></div> */}
@@ -303,15 +303,8 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         `}        </style>
       </div>
 
-            {/* Fixed Title Above Nav */}
-      <div className="fixed top-0 left-0 right-0 z-40 flex justify-center pt-2 md:pt-2">
-        <h1 className="font-bold tracking-tight" style={{fontFamily: 'var(--font-rugen)', letterSpacing: '-0.02em', fontSize: '17px', color: '#ffffff'}}>
-          KILLER NUGGET
-        </h1>
-      </div>
-
       {/* Header Menu */}
-      <header className={`fixed left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-[30px] md:translate-y-[35px]' : '-translate-y-full'}`}>
+      <header className={`fixed left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-[27px]' : '-translate-y-full'}`}>
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
