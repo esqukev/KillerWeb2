@@ -203,9 +203,9 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       <div className="absolute inset-0 z-0 bg-black">
         {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
         <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
-          opacity: 0.3,
+          opacity: 0.35,
           maskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
           WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)'
         }}></div>
