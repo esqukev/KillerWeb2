@@ -819,7 +819,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
               </svg>
         </a>
         <a
-              href="https://soundcloud.com/killer_n" 
+              href="https://soundcloud.com/killernugget" 
           target="_blank"
           rel="noopener noreferrer"
               className="text-white hover:text-orange-500 transition-colors"
