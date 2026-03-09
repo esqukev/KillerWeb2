@@ -126,10 +126,10 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     ];
     
     const allVideos = [
-      { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761006228/reel_killer_3_ozhlfb.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4', type: 'video' },
-      { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761005706/another_world_reel_ohstg6.mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4', type: 'video' },
-      { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761005696/97445a85e47045b0b73189f5b7c12fff_twfdc5.mp4', alt: 'Killer Nugget Video 4', filename: 'Killer_Nugget_Video_4.mp4', type: 'video' },
-      { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761005692/sunset_beats_vjp7y3.mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4', type: 'video' }
+      { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773088987/reel_killer_3_undn8z.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4', type: 'video' },
+      { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773088633/another_world_reel_dwf5m0.mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4', type: 'video' },
+      { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773088620/sunset_beats_xysrjo.mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4', type: 'video' },
+      { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773089116/97445a85e47045b0b73189f5b7c12fff_wh0xh8.mp4', alt: 'Killer Nugget Video 4', filename: 'Killer_Nugget_Video_4.mp4', type: 'video' }
     ];
     
     const allMedia = [...allPhotos, ...allVideos];
@@ -584,10 +584,10 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
                     <h3 className="text-xl md:text-2xl font-light mb-6 md:mb-8 tracking-[0.1em] uppercase">Videos</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
                       {[
-                        { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761006228/reel_killer_3_ozhlfb.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4' },
-                        { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761005706/another_world_reel_ohstg6.mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4' },
-                        { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761005696/97445a85e47045b0b73189f5b7c12fff_twfdc5.mp4', alt: 'Killer Nugget Video 4', filename: 'Killer_Nugget_Video_4.mp4' },
-                        { src: 'https://res.cloudinary.com/dpplgma25/video/upload/v1761005692/sunset_beats_vjp7y3.mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4' }
+                        { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773088987/reel_killer_3_undn8z.mp4', alt: 'Reel Killer 3', filename: 'Killer_Nugget_Reel_Killer_3.mp4' },
+                        { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773088633/another_world_reel_dwf5m0.mp4', alt: 'Another World Reel', filename: 'Killer_Nugget_Another_World_Reel.mp4' },
+                        { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773088620/sunset_beats_xysrjo.mp4', alt: 'Sunset Beats', filename: 'Killer_Nugget_Sunset_Beats.mp4' },
+                        { src: 'https://res.cloudinary.com/djc75vvmo/video/upload/v1773089116/97445a85e47045b0b73189f5b7c12fff_wh0xh8.mp4', alt: 'Killer Nugget Video 4', filename: 'Killer_Nugget_Video_4.mp4' }
                       ].map((video, index) => (
                         <div key={index} className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer" onClick={() => openMedia(video.src, 'video', video.alt)}>
                           <video 
