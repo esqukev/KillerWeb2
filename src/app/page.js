@@ -11,6 +11,8 @@ export default function Home() {
   const [showNav, setShowNav] = useState(true);
   const [showFooter, setShowFooter] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [appHeight, setAppHeight] = useState("100dvh");
+  const [appTop, setAppTop] = useState("0px");
 
   const toggleSection = (section) => {
     console.log('Button clicked - v2:', section);
@@ -171,6 +173,28 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [selectedMedia, navigateMedia]);
   
+  // Keep the stage sized to the visible iOS viewport (above the Safari URL bar)
+  useEffect(() => {
+    const syncHeight = () => {
+      const vv = window.visualViewport;
+      const height = vv?.height ?? window.innerHeight;
+      const top = vv?.offsetTop ?? 0;
+      setAppHeight(`${Math.round(height)}px`);
+      setAppTop(`${Math.round(top)}px`);
+      document.documentElement.style.setProperty("--app-height", `${Math.round(height)}px`);
+    };
+
+    syncHeight();
+    window.visualViewport?.addEventListener("resize", syncHeight);
+    window.visualViewport?.addEventListener("scroll", syncHeight);
+    window.addEventListener("orientationchange", syncHeight);
+    return () => {
+      window.visualViewport?.removeEventListener("resize", syncHeight);
+      window.visualViewport?.removeEventListener("scroll", syncHeight);
+      window.removeEventListener("orientationchange", syncHeight);
+    };
+  }, []);
+
   // Hide/Show nav and footer on scroll with threshold
   useEffect(() => {
     const handleScroll = () => {
@@ -198,7 +222,11 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
   }, [lastScrollY]);
 
   return (
-    <div className="min-h-screen w-full bg-black text-white font-mono relative overflow-hidden">
+    <div
+      className="fixed inset-x-0 top-0 w-full bg-black text-white font-mono overflow-hidden"
+      style={{ height: appHeight, top: appTop }}
+    >
+      <h1 className="sr-only">Killer Nugget — House music producer from Costa Rica</h1>
       {/* Carlita-Style Background */}
       <div className="absolute inset-0 z-0 bg-black">
         {/* Subtle Grid Pattern - BEHIND IMAGE - Brighter to show through */}
@@ -277,12 +305,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
         
         <style jsx global>{`
           body {
-            overscroll-behavior: none;
             -webkit-overflow-scrolling: touch;
-          }
-          
-          html {
-            overscroll-behavior: none;
           }
           
           @keyframes moveGradient {
@@ -311,7 +334,10 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       </div>
 
       {/* Header Menu */}
-      <header className={`fixed left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-[27px]' : '-translate-y-full'}`}>
+      <header
+        className={`absolute left-0 right-0 z-30 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-0' : '-translate-y-full'}`}
+        style={{ paddingTop: "max(8px, env(safe-area-inset-top))" }}
+      >
         <div className="w-full px-4 md:px-6 py-4 md:py-8">
           {/* Mobile Layout - Centered */}
           <div className="md:hidden flex flex-col items-center">
@@ -393,7 +419,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
 
               {/* Popup Sections */}
         {activeSection && (
-          <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm overflow-y-auto">
+          <div className="absolute inset-0 z-50 bg-black/95 backdrop-blur-sm overflow-y-auto">
           <div className="min-h-screen flex items-start justify-center p-8">
             <div className="max-w-4xl mx-auto w-full py-8 fade-in">
               {/* Close Button */}
@@ -737,7 +763,7 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
 
       {/* Media Modal */}
       {selectedMedia && (
-        <div className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="absolute inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="relative max-w-4xl max-h-[90vh] w-full">
             {/* Close Button */}
             <button 
@@ -800,7 +826,10 @@ Con una pasión profundamente arraigada por el diseño sonoro, el groove y la cu
       )}
 
       {/* Footer */}
-      <footer className={`absolute left-4 md:left-8 right-4 md:right-8 z-20 transition-transform duration-500 ease-in-out ${showFooter ? 'translate-y-0' : 'translate-y-full'}`} style={{top: 'calc(100vh - 65px)'}}>
+      <footer
+        className={`absolute left-4 md:left-8 right-4 md:right-8 z-20 transition-transform duration-500 ease-in-out ${showFooter ? 'translate-y-0' : 'translate-y-full'}`}
+        style={{ bottom: 0, top: "auto", paddingBottom: "max(8px, env(safe-area-inset-bottom))" }}
+      >
         <div className="text-center" style={{paddingBottom: '8px'}}>
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-4 md:space-x-6 mb-4 md:mb-6">
