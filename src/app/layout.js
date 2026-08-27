@@ -20,6 +20,9 @@ const playfairDisplay = Playfair_Display({
 export const metadata = {
   title: "Killer Nugget",
   description: "Official press kit for Killer Nugget - House music producer from Costa Rica",
+  verification: {
+    google: "2SRXz6sUYr3s5DzLlW8oNiFTO_hk29sTq7VX8ljlSm4",
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
